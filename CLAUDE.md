@@ -42,5 +42,5 @@ No SSR · no auth · no CMS · no contact form · no project case studies · no 
 
 ## Current milestone
 
-**M1 — Content & Design** (design tokens, CSS custom properties, `src/data/` files).
-Implementation has not started.
+**M3 — SEO & Performance** (static SEO markup, real images, Lighthouse audit).
+M1 and M2 are complete.
