@@ -51,7 +51,7 @@ Implement the full token set from [PDS §12](./PRODUCT_DESIGN_SPECIFICATION.md#1
 
 ---
 
-### T-1.4 Content data files
+### ✅ T-1.4 Content data files
 
 Populate all structured data from the `export/` reference (CV content is in `sections-1.jsx`):
 
