@@ -10,9 +10,10 @@ export default tseslint.config(
   // Base (no type-info) for all files
   ...tseslint.configs.recommended,
 
-  // Type-checked rules scoped to project files only
+  // Type-checked rules scoped to source files (test files have their own block below)
   {
     files: ['src/**/*.{ts,tsx}', 'vite.config.ts'],
+    ignores: ['src/**/*.test.{ts,tsx}', 'src/test-setup.ts', 'src/vitest.d.ts'],
     extends: tseslint.configs.recommendedTypeChecked,
     languageOptions: {
       parserOptions: {
