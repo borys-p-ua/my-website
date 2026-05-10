@@ -13,6 +13,8 @@ export interface Profile {
   resumePdfPath: string
   heroEyebrow: string
   heroMeta: readonly [HeroMetaFact, HeroMetaFact, HeroMetaFact]
+  education: string
+  currentlyLearning: string
 }
 
 export interface SkillCategory {

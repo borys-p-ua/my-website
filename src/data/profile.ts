@@ -15,4 +15,6 @@ export const profile: Profile = {
     { label: 'Experience', value: '13+ years' },
     { label: 'Currently', value: 'Principal @ Expedition Software' },
   ],
+  education: 'Computer Science, Kharkiv Polytechnic Institute',
+  currentlyLearning: 'Go, LLM fine-tuning & prompt engineering',
 }

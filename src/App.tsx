@@ -4,6 +4,7 @@ import { SkipLink } from './components/layout/SkipLink'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { Hero } from './sections/Hero'
+import { About } from './sections/About'
 
 export function App() {
   return (
@@ -18,6 +19,7 @@ export function App() {
             className="flex-1 pt-16 outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             <Hero />
+            <About />
           </main>
           <Footer />
         </div>
