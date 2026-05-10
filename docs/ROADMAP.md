@@ -13,7 +13,7 @@ Each task produces something you can open in a browser and verify manually.
 
 Design tokens, tooling, fonts, and all structured data files. No UI yet — this milestone produces a compilable, lint-clean, type-safe foundation.
 
-### T-1.1 Tooling setup
+### ✅ T-1.1 Tooling setup
 
 Install and configure the full quality toolchain:
 
@@ -29,7 +29,7 @@ Install and configure the full quality toolchain:
 
 ---
 
-### T-1.2 Design tokens + theme system
+### ✅ T-1.2 Design tokens + theme system
 
 Implement the full token set from [PDS §12](./PRODUCT_DESIGN_SPECIFICATION.md#12-design-tokens--css-custom-properties) and [PDS §3](./PRODUCT_DESIGN_SPECIFICATION.md#3-color-system):
 
@@ -286,6 +286,7 @@ Install `@huggingface/transformers` v4. Build `src/lib/llm/`:
 - `index.ts` — public API: `getLLMStatus()`, `generateCoverLetter()`
 
 Wire into Cover Letter section:
+
 - Show unavailable / needs-download / ready state banners
 - Model download progress bar with estimated size
 - Streaming output into preview textarea (token by token)
