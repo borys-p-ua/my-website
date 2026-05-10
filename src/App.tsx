@@ -10,6 +10,7 @@ import { About } from './sections/About'
 const Skills = lazy(() => import('./sections/Skills'))
 const Experience = lazy(() => import('./sections/Experience'))
 const Projects = lazy(() => import('./sections/Projects'))
+const Contact = lazy(() => import('./sections/Contact'))
 
 export function App() {
   return (
@@ -33,6 +34,9 @@ export function App() {
             </Suspense>
             <Suspense fallback={null}>
               <Projects />
+            </Suspense>
+            <Suspense fallback={null}>
+              <Contact />
             </Suspense>
           </main>
           <Footer />
