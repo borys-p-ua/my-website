@@ -1,3 +1,8 @@
+export interface HeroMetaFact {
+  label: string
+  value: string
+}
+
 export interface Profile {
   name: string
   headline: string
@@ -6,6 +11,8 @@ export interface Profile {
   location: string
   availability: string
   resumePdfPath: string
+  heroEyebrow: string
+  heroMeta: readonly [HeroMetaFact, HeroMetaFact, HeroMetaFact]
 }
 
 export interface SkillCategory {

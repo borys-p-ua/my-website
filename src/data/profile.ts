@@ -9,4 +9,10 @@ export const profile: Profile = {
   location: 'Bath, Somerset · United Kingdom',
   availability: 'Open to remote / hybrid roles',
   resumePdfPath: 'Polietaiev_Borys_Resume.pdf',
+  heroEyebrow: 'Principal Engineer · Tech Lead · Engineering Manager',
+  heroMeta: [
+    { label: 'Based in', value: 'Bath, Somerset · United Kingdom' },
+    { label: 'Experience', value: '13+ years' },
+    { label: 'Currently', value: 'Principal @ Expedition Software' },
+  ],
 }
