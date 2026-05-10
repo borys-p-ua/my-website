@@ -5,6 +5,7 @@ import { MobileDrawer } from './MobileDrawer'
 import type { NavItem } from './MobileDrawer'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
 import { profile } from '../../data/profile'
+import { assetUrl } from '../../lib/assetUrl'
 
 const NAV_ITEMS: readonly NavItem[] = [
   { label: 'About', id: 'about' },
@@ -90,7 +91,8 @@ export function Header() {
           </ul>
           <ThemeToggle />
           <a
-            href="#resume"
+            href={assetUrl(profile.resumePdfPath)}
+            download
             className="rounded-md bg-accent px-4 py-2 text-sm font-semibold text-bg transition-colors duration-base hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             Résumé
