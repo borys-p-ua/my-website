@@ -8,6 +8,7 @@ import { Hero } from './sections/Hero'
 import { About } from './sections/About'
 
 const Skills = lazy(() => import('./sections/Skills'))
+const Experience = lazy(() => import('./sections/Experience'))
 
 export function App() {
   return (
@@ -25,6 +26,9 @@ export function App() {
             <About />
             <Suspense fallback={null}>
               <Skills />
+            </Suspense>
+            <Suspense fallback={null}>
+              <Experience />
             </Suspense>
           </main>
           <Footer />
