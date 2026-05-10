@@ -60,11 +60,22 @@ export function Hero() {
               className="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl border border-accent"
             />
             <picture>
+              <source
+                type="image/avif"
+                srcSet={`${assetUrl('images/profile.avif')} 480w, ${assetUrl('images/profile.avif')} 960w`}
+                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+              />
+              <source
+                type="image/webp"
+                srcSet={`${assetUrl('images/profile.webp')} 480w, ${assetUrl('images/profile.webp')} 960w`}
+                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+              />
               <img
                 src={assetUrl(profile.photoPath)}
                 alt=""
                 width={480}
                 height={600}
+                fetchPriority="high"
                 className="relative aspect-[4/5] h-auto w-full rounded-2xl border border-border-subtle bg-surface-raised object-cover"
               />
             </picture>

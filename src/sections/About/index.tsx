@@ -76,6 +76,16 @@ export function About() {
         <div className="grid gap-16 md:grid-cols-[280px_1fr] md:items-start">
           <div className="flex justify-center md:sticky md:top-24 md:justify-start">
             <picture>
+              <source
+                type="image/avif"
+                srcSet={assetUrl('images/profile.avif')}
+                sizes="(min-width: 768px) 280px, 160px"
+              />
+              <source
+                type="image/webp"
+                srcSet={assetUrl('images/profile.webp')}
+                sizes="(min-width: 768px) 280px, 160px"
+              />
               <img
                 src={assetUrl(profile.photoPath)}
                 alt=""
