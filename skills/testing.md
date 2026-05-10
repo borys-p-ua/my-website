@@ -1,6 +1,8 @@
 # Skill: Testing
 
-Full strategy: [TDD §15](../docs/TECHNICAL_DESIGN.md#15-testing-strategy)
+**Docs:** [TDD §15](../docs/TECHNICAL_DESIGN.md#15-testing-strategy)
+
+---
 
 ## Stack
 
@@ -31,6 +33,7 @@ Setup file: `src/test-setup.ts`. Environment: `jsdom`.
 ## Mocking
 
 **LLM** — `src/lib/llm/__mocks__/index.ts` (Vitest auto-mock via `vi.mock`):
+
 ```ts
 export const getLLMStatus = vi.fn().mockResolvedValue('ready');
 export const generateCoverLetter = vi.fn().mockResolvedValue('Mock cover letter.');
@@ -41,6 +44,7 @@ export const generateCoverLetter = vi.fn().mockResolvedValue('Mock cover letter.
 ## Accessibility testing
 
 `vitest-axe` on all interactive components. Registered in `src/test-setup.ts`:
+
 ```ts
 import { configureAxe, toHaveNoViolations } from 'vitest-axe';
 expect.extend(toHaveNoViolations);

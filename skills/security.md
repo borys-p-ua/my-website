@@ -1,7 +1,8 @@
 # Skill: Security + CSP
 
-Full spec: [TDD §14](../docs/TECHNICAL_DESIGN.md#14-security)
-Requirements: [BRD §6.4](../docs/BUSINESS_REQUIREMENTS.md#64-security) (NF-30–33)
+**Docs:** [TDD §14](../docs/TECHNICAL_DESIGN.md#14-security) · [BRD §6.4](../docs/BUSINESS_REQUIREMENTS.md#64-security)
+
+---
 
 ## Key constraints
 

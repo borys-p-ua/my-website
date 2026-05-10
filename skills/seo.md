@@ -1,7 +1,8 @@
 # Skill: SEO
 
-Full spec: [TDD §11](../docs/TECHNICAL_DESIGN.md#11-seo-implementation)
-Feature requirements: [PRD §6](../docs/PRODUCT_REQUIREMENTS.md#6-seo--discoverability-brd-f-30--f-37)
+**Docs:** [TDD §11](../docs/TECHNICAL_DESIGN.md#11-seo-implementation) · [PRD §6](../docs/PRODUCT_REQUIREMENTS.md#6-seo--discoverability-brd-f-30--f-37)
+
+---
 
 ## Key principle
 

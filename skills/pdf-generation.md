@@ -1,7 +1,8 @@
 # Skill: PDF Generation
 
-Full spec: [TDD §10](../docs/TECHNICAL_DESIGN.md#10-pdf-generation)
-Template spec (layout, typography, filter behavior): [TDD §10.7](../docs/TECHNICAL_DESIGN.md#107-template-specification-resolves-brd-d-2)
+**Docs:** [TDD §10](../docs/TECHNICAL_DESIGN.md#10-pdf-generation) · [TDD §10.7 — template spec](../docs/TECHNICAL_DESIGN.md#107-template-specification-resolves-brd-d-2)
+
+---
 
 ## Library
 

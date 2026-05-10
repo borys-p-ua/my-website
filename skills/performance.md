@@ -1,7 +1,8 @@
 # Skill: Performance
 
-Full spec: [TDD §12](../docs/TECHNICAL_DESIGN.md#12-performance-strategy)
-Requirements: [BRD §6.1](../docs/BUSINESS_REQUIREMENTS.md#61-performance) (NF-01–05), [BRD §4](../docs/BUSINESS_REQUIREMENTS.md#4-goals-and-success-criteria)
+**Docs:** [TDD §12](../docs/TECHNICAL_DESIGN.md#12-performance-strategy) · [BRD §6.1](../docs/BUSINESS_REQUIREMENTS.md#61-performance) · [BRD §4](../docs/BUSINESS_REQUIREMENTS.md#4-goals-and-success-criteria)
+
+---
 
 ## Targets
 

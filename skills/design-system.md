@@ -1,7 +1,8 @@
 # Skill: Design System + Styling
 
-Full specs: [TDD §8](../docs/TECHNICAL_DESIGN.md#8-styling-architecture) · [PDS](../docs/PRODUCT_DESIGN_SPECIFICATION.md)
-Hard design constraints (must not be violated): [PDS §13](../docs/PRODUCT_DESIGN_SPECIFICATION.md#13-design-constraints--boundaries)
+**Docs:** [TDD §8](../docs/TECHNICAL_DESIGN.md#8-styling-architecture) · [PDS](../docs/PRODUCT_DESIGN_SPECIFICATION.md) · [PDS §13 — constraints](../docs/PRODUCT_DESIGN_SPECIFICATION.md#13-design-constraints--boundaries)
+
+---
 
 ## Tailwind v4
 

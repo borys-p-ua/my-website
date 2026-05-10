@@ -1,7 +1,8 @@
 # Skill: Browser LLM + Cover Letter
 
-Full spec: [TDD §9](../docs/TECHNICAL_DESIGN.md#9-browser-llm-integration)
-Abuse prevention detail: [TDD §9.9](../docs/TECHNICAL_DESIGN.md#99-abuse-prevention-resolves-brd-d-3)
+**Docs:** [TDD §9](../docs/TECHNICAL_DESIGN.md#9-browser-llm-integration) · [TDD §9.9 — abuse prevention](../docs/TECHNICAL_DESIGN.md#99-abuse-prevention-resolves-brd-d-3)
+
+---
 
 ## Library
 

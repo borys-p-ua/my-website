@@ -1,8 +1,8 @@
 # Skill: Accessibility
 
-Full spec: [TDD §13](../docs/TECHNICAL_DESIGN.md#13-accessibility-implementation)
-Requirements: [BRD §6.3](../docs/BUSINESS_REQUIREMENTS.md#63-accessibility) (NF-20–23)
-Hard constraints: [PDS §13](../docs/PRODUCT_DESIGN_SPECIFICATION.md#13-design-constraints--boundaries) DC-03, DC-10
+**Docs:** [TDD §13](../docs/TECHNICAL_DESIGN.md#13-accessibility-implementation) · [BRD §6.3](../docs/BUSINESS_REQUIREMENTS.md#63-accessibility) · [PDS §13 — constraints](../docs/PRODUCT_DESIGN_SPECIFICATION.md#13-design-constraints--boundaries)
+
+---
 
 ## Landmarks
 
@@ -30,6 +30,7 @@ First element in the DOM: `<a href="#main-content" className="sr-only focus:not-
 ## Reduced motion
 
 Section reveal animations must be gated on:
+
 ```ts
 window.matchMedia('(prefers-reduced-motion: reduce)').matches
 ```

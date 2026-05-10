@@ -1,6 +1,8 @@
 # Skill: Data Layer + Types
 
-Full spec: [TDD §7](../docs/TECHNICAL_DESIGN.md#7-data-layer)
+**Docs:** [TDD §7](../docs/TECHNICAL_DESIGN.md#7-data-layer)
+
+---
 
 ## Where content lives
 

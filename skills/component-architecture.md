@@ -1,6 +1,8 @@
 # Skill: Component Architecture
 
-Full spec: [TDD §5](../docs/TECHNICAL_DESIGN.md#5-component-architecture)
+**Docs:** [TDD §5](../docs/TECHNICAL_DESIGN.md#5-component-architecture)
+
+---
 
 ## Categories
 

@@ -1,4 +1,4 @@
-# SKILLS.md
+# Skill Index
 
 Skill index for this project. Load the relevant file before starting a task — avoids pulling the full documentation set into context at once.
 

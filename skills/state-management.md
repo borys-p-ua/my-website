@@ -1,6 +1,8 @@
 # Skill: State Management
 
-Full spec: [TDD §6](../docs/TECHNICAL_DESIGN.md#6-state-management)
+**Docs:** [TDD §6](../docs/TECHNICAL_DESIGN.md#6-state-management)
+
+---
 
 ## Rule
 
