@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import { ThemeProvider } from './context/ThemeContext'
 import { SkillFilterProvider } from './context/SkillFilterContext'
 import { SkipLink } from './components/layout/SkipLink'
@@ -5,6 +6,8 @@ import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { Hero } from './sections/Hero'
 import { About } from './sections/About'
+
+const Skills = lazy(() => import('./sections/Skills'))
 
 export function App() {
   return (
@@ -20,6 +23,9 @@ export function App() {
           >
             <Hero />
             <About />
+            <Suspense fallback={null}>
+              <Skills />
+            </Suspense>
           </main>
           <Footer />
         </div>
