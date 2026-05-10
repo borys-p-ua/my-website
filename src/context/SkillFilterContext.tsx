@@ -5,8 +5,8 @@ import { skills } from '../data/skills'
 interface SkillFilterState {
   selected: Set<string>
   toggle: (skill: string) => void
-  selectAll: (category: string) => void
-  clearAll: (category: string) => void
+  selectAll: (category?: string) => void
+  clearAll: (category?: string) => void
   reset: () => void
 }
 
@@ -24,24 +24,38 @@ export function SkillFilterProvider({ children }: { children: ReactNode }) {
     })
   }, [])
 
-  const selectAll = useCallback((category: string) => {
-    const cat = skills.find((c) => c.category === category)
-    if (!cat) return
-    setSelected((prev) => {
-      const next = new Set(prev)
-      cat.items.forEach((item) => next.add(item))
+  const selectAll = useCallback((category?: string) => {
+    if (category !== undefined) {
+      const cat = skills.find((c) => c.category === category)
+      if (!cat) return
+      setSelected((prev) => {
+        const next = new Set(prev)
+        cat.items.forEach((item) => next.add(item))
+        return next
+      })
+      return
+    }
+    setSelected(() => {
+      const next = new Set<string>()
+      for (const c of skills) {
+        c.items.forEach((item) => next.add(item))
+      }
       return next
     })
   }, [])
 
-  const clearAll = useCallback((category: string) => {
-    const cat = skills.find((c) => c.category === category)
-    if (!cat) return
-    setSelected((prev) => {
-      const next = new Set(prev)
-      cat.items.forEach((item) => next.delete(item))
-      return next
-    })
+  const clearAll = useCallback((category?: string) => {
+    if (category !== undefined) {
+      const cat = skills.find((c) => c.category === category)
+      if (!cat) return
+      setSelected((prev) => {
+        const next = new Set(prev)
+        cat.items.forEach((item) => next.delete(item))
+        return next
+      })
+      return
+    }
+    setSelected(new Set())
   }, [])
 
   const reset = useCallback(() => setSelected(new Set()), [])

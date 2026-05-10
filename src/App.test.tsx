@@ -12,9 +12,16 @@ describe('App', () => {
     )
   })
 
-  it('renders main landmark', () => {
+  it('renders main landmark with focus target for skip link', () => {
     render(<App />)
-    expect(screen.getByRole('main')).toBeInTheDocument()
+    const main = screen.getByRole('main')
+    expect(main).toHaveAttribute('id', 'main-content')
+    expect(main).toHaveAttribute('tabIndex', '-1')
+  })
+
+  it('renders footer with content info', () => {
+    render(<App />)
+    expect(screen.getByRole('contentinfo')).toBeInTheDocument()
   })
 
   it('has no axe violations', async () => {

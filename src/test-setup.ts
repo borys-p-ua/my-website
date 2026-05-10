@@ -6,6 +6,39 @@ import { afterEach, expect } from 'vitest'
 
 expect.extend(vitestAxeMatchers)
 
+class IntersectionObserverMock implements IntersectionObserver {
+  readonly root: Element | Document | null = null
+  readonly rootMargin = ''
+  readonly thresholds: ReadonlyArray<number> = []
+  constructor(cb: IntersectionObserverCallback, options?: IntersectionObserverInit) {
+    void cb
+    void options
+  }
+  disconnect() {}
+  observe() {}
+  takeRecords(): IntersectionObserverEntry[] {
+    return []
+  }
+  unobserve() {}
+}
+
+globalThis.IntersectionObserver = IntersectionObserverMock
+
+Object.defineProperty(window, 'matchMedia', {
+  writable: true,
+  configurable: true,
+  value: (query: string): MediaQueryList => ({
+    matches: false,
+    media: query,
+    onchange: null,
+    addListener: () => {},
+    removeListener: () => {},
+    addEventListener: () => {},
+    removeEventListener: () => {},
+    dispatchEvent: () => false,
+  }),
+})
+
 // Node.js 22 exposes an experimental undefined `localStorage` global that
 // overrides jsdom's. Replace it with a real in-memory implementation.
 const localStorageMock = (() => {
