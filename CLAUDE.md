@@ -1,7 +1,6 @@
 # CLAUDE.md
 
-Before starting any implementation task, load the relevant file from [SKILLS.md](SKILLS.md).
-Full documentation lives in `docs/` (BRD · PRD · PDS · TDD) — read a doc only when the skill file says to.
+Project skills live in `.claude/skills/` — they are auto-invoked based on the task, or trigger one manually with `/skill-name`. Full documentation lives in `docs/` (BRD · PRD · PDS · TDD) — read a doc only when a skill file says to.
 
 ---
 
