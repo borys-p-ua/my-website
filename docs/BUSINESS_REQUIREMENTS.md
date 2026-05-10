@@ -1,10 +1,31 @@
 # Business Requirements Document — Personal Portfolio Website
 
+## Contents
+
+1. [Purpose](#1-purpose)
+2. [Background](#2-background)
+3. [Target Audience](#3-target-audience)
+4. [Goals and Success Criteria](#4-goals-and-success-criteria)
+5. [Functional Requirements](#5-functional-requirements)
+6. [Non-Functional Requirements](#6-non-functional-requirements)
+   - [6.1 Performance](#61-performance)
+   - [6.2 Responsiveness](#62-responsiveness)
+   - [6.3 Accessibility](#63-accessibility)
+   - [6.4 Security](#64-security)
+   - [6.5 Code Quality](#65-code-quality)
+7. [Technical Constraints](#7-technical-constraints)
+8. [Out of Scope](#8-out-of-scope)
+9. [Assumptions](#9-assumptions)
+10. [Milestones](#10-milestones)
+11. [Open Questions](#11-open-questions)
+
+---
+
 **Version:** 1.3  
 **Date:** 2026-05-10  
 **Author:** Borys  
 **Status:** Approved  
-**Related:** [Product Requirements Document](./PRODUCT_REQUIREMENTS.md) · [Product Design Specification](./PRODUCT_DESIGN_SPECIFICATION.md)
+**Related:** [Product Requirements Document](./PRODUCT_REQUIREMENTS.md) · [Product Design Specification](./PRODUCT_DESIGN_SPECIFICATION.md) · [Technical Design](./TECHNICAL_DESIGN.md)
 
 ---
 
@@ -70,7 +91,7 @@ Full feature specifications, acceptance criteria, and UX flows are defined in th
 | F-23 | Editable output textarea | [§5.9.3](./PRODUCT_REQUIREMENTS.md#593-generation--output) |
 | F-24 | Copy to clipboard + Download as .txt | [§5.9.4](./PRODUCT_REQUIREMENTS.md#594-post-generation-actions) |
 | F-25 | Graceful degradation when LLM unavailable | [§5.9.3](./PRODUCT_REQUIREMENTS.md#593-generation--output) |
-| F-26 | Captcha before generation | [§5.9.2](./PRODUCT_REQUIREMENTS.md#592-input-form) |
+| F-26 | Abuse prevention before generation (honeypot + rate limit + bot signal) | [§5.9.2](./PRODUCT_REQUIREMENTS.md#592-input-form) |
 | F-30–37 | SEO: meta tags, OG, Twitter Card, JSON-LD, sitemap, robots.txt | [§6](./PRODUCT_REQUIREMENTS.md#6-seo--discoverability-brd-f-30--f-37) |
 
 ---
@@ -157,7 +178,7 @@ Contrast-compliant palette is defined in [PDS §3](./PRODUCT_DESIGN_SPECIFICATIO
 - The owner will supply all content (bio, work history, skills, project descriptions, photo) in a structured data file before the UI is built.
 - The cover letter generator is a tool for **visitors** (e.g., a recruiter or hiring manager) to produce a tailored submission draft; it is not a self-service tool for the owner.
 - A custom domain may be added later; the design must support a trivial base-path switch (`/my-website/` → `/`).
-- Browser LLM availability (e.g., Chrome's built-in Gemini Nano via the Prompt API) is assumed for the cover letter feature; the UI will communicate clearly when the feature is unavailable in the visitor's browser.
+- Browser LLM availability requires WebGPU support (Chrome 113+, Edge 113+, Safari 17.4+, Firefox 141+) using Transformers.js v4 + Llama 3.2 3B-Instruct. A WASM fallback handles non-WebGPU environments at reduced speed. The UI communicates clearly when the feature is unavailable.
 
 ---
 
@@ -181,15 +202,15 @@ All initial open questions have been resolved. Remaining decisions deferred to l
 | # | Question | Decision |
 |---|---|---|
 | OQ-1 | Serverless platform for LLM function | **Resolved — no backend.** Browser-native LLM only; serverless strategy revisited if needed. |
-| OQ-2 | Abuse prevention for cover letter generator | **Resolved — simple captcha** (e.g., hCaptcha) before generation. |
+| OQ-2 | Abuse prevention for cover letter generator | **Resolved — layered client-side defence** (honeypot + session rate limit + bot signal check). Standard captcha providers require server-side verification incompatible with GitHub Pages. See [TDD §9.9](./TECHNICAL_DESIGN.md#99-abuse-prevention-resolves-brd-d-3). |
 | OQ-3 | Contact form with server-side email | **Resolved — out of scope.** Contact section displays details only. |
 | OQ-4 | Project case studies | **Resolved — out of scope.** Card-based portfolio list is sufficient. |
-| OQ-5 | PDF generation approach | **Resolved — client-side** (`pdf-lib` or equivalent). Library and template details defined in next phase. |
+| OQ-5 | PDF generation approach | **Resolved — client-side** (`@react-pdf/renderer`). Template details defined in next phase. |
 
 **Remaining deferred decisions (next phase):**
 
-| # | Question |
-|---|---|
-| D-1 | Exact browser LLM API and minimum browser version requirements |
-| D-2 | PDF template design and which fields are included / excluded per filter |
-| D-3 | Captcha provider selection (hCaptcha vs. Cloudflare Turnstile vs. custom puzzle) |
+| # | Question | Status |
+|---|---|---|
+| D-1 | Browser LLM API and minimum browser version requirements | **Resolved** — Transformers.js v4 + Llama 3.2 3B-Instruct. Minimum: WebGPU (Chrome 113+, Edge 113+, Safari 17.4+, Firefox 141+). See [TDD §9](./TECHNICAL_DESIGN.md#9-browser-llm-integration). |
+| ~~D-2~~ | ~~PDF template design and which fields are included / excluded per filter~~ | **Resolved** — see [TDD §10.7](./TECHNICAL_DESIGN.md#107-template-specification-resolves-brd-d-2) |
+| ~~D-3~~ | ~~Captcha provider selection~~ | **Resolved** — no captcha; honeypot + rate limit + bot signal check. See [TDD §9.9](./TECHNICAL_DESIGN.md#99-abuse-prevention-resolves-brd-d-3). |

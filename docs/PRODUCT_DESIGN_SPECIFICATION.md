@@ -1,10 +1,51 @@
 # Product Design Specification — Personal Portfolio Website
 
+## Contents
+
+1. [Overview](#1-overview)
+2. [Design Principles](#2-design-principles)
+3. [Color System](#3-color-system)
+   - [3.1 Modes](#31-modes)
+   - [3.2 Palette — Dark mode](#32-palette--dark-mode)
+   - [3.3 Palette — Light mode](#33-palette--light-mode)
+   - [3.4 Contrast compliance](#34-contrast-compliance)
+4. [Typography](#4-typography)
+   - [4.1 Typefaces](#41-typefaces)
+   - [4.2 Type scale](#42-type-scale)
+   - [4.3 Usage rules](#43-usage-rules)
+5. [Spacing System](#5-spacing-system)
+6. [Layout & Grid](#6-layout--grid)
+   - [6.1 Breakpoints](#61-breakpoints)
+   - [6.2 Page containers](#62-page-containers)
+   - [6.3 Section layout](#63-section-layout)
+   - [6.4 Grid columns](#64-grid-columns)
+7. [Iconography](#7-iconography)
+8. [Component Design Specifications](#8-component-design-specifications)
+   - [8.1 Buttons](#81-buttons)
+   - [8.2 Skill / Tech Tags](#82-skill--tech-tags)
+   - [8.3 Project Cards](#83-project-cards)
+   - [8.4 Form Inputs](#84-form-inputs)
+   - [8.5 Navigation Header](#85-navigation-header)
+   - [8.6 Loading & Progress States](#86-loading--progress-states)
+   - [8.7 Alert / Feedback Banners](#87-alert--feedback-banners)
+9. [Motion & Animation](#9-motion--animation)
+   - [9.1 Principles](#91-principles)
+   - [9.2 Duration tokens](#92-duration-tokens)
+   - [9.3 Easing tokens](#93-easing-tokens)
+   - [9.4 What to animate](#94-what-to-animate)
+   - [9.5 What not to animate](#95-what-not-to-animate)
+10. [Imagery Guidelines](#10-imagery-guidelines)
+11. [Section-Level Layout Specs](#11-section-level-layout-specs)
+12. [Design Tokens — CSS Custom Properties](#12-design-tokens--css-custom-properties)
+13. [Design Constraints & Boundaries](#13-design-constraints--boundaries)
+
+---
+
 **Version:** 1.0  
 **Date:** 2026-05-10  
 **Author:** Borys  
 **Status:** Approved  
-**Related:** [Business Requirements Document](./BUSINESS_REQUIREMENTS.md) · [Product Requirements Document](./PRODUCT_REQUIREMENTS.md)
+**Related:** [Business Requirements Document](./BUSINESS_REQUIREMENTS.md) · [Product Requirements Document](./PRODUCT_REQUIREMENTS.md) · [Technical Design](./TECHNICAL_DESIGN.md)
 
 ---
 

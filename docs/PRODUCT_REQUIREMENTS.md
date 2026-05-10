@@ -1,10 +1,38 @@
 # Product Requirements Document — Personal Portfolio Website
 
+## Contents
+
+1. [Overview](#1-overview)
+2. [User Personas](#2-user-personas)
+3. [Information Architecture](#3-information-architecture)
+4. [Navigation & Shell](#4-navigation--shell)
+   - [4.1 Header](#41-header)
+   - [4.2 Footer](#42-footer)
+   - [4.3 Skip link](#43-skip-link)
+5. [Feature Specifications](#5-feature-specifications)
+   - [5.1 Hero Section](#51-hero-section-brd-f-01)
+   - [5.2 About Section](#52-about-section-brd-f-02)
+   - [5.3 Skills Section](#53-skills-section-brd-f-03)
+   - [5.4 Experience Section](#54-experience-section-brd-f-04)
+   - [5.5 Projects Section](#55-projects-section-brd-f-05)
+   - [5.6 Contact Section](#56-contact-section-brd-f-06)
+   - [5.7 Resume Download — Full](#57-resume-download--full-brd-f-10)
+   - [5.8 Resume Download — Filtered](#58-resume-download--filtered-brd-f-11-f-12-f-13)
+   - [5.9 Cover Letter Generator](#59-cover-letter-generator-brd-f-20--f-26)
+6. [SEO & Discoverability](#6-seo--discoverability-brd-f-30--f-37)
+7. [Responsive Design](#7-responsive-design-brd-nf-10--nf-12)
+8. [Accessibility](#8-accessibility-brd-nf-20--nf-23)
+9. [Content Requirements](#9-content-requirements)
+10. [Key UX Flows](#10-key-ux-flows)
+11. [Deferred Decisions](#11-deferred-decisions)
+
+---
+
 **Version:** 1.1  
 **Date:** 2026-05-10  
 **Author:** Borys  
 **Status:** Approved  
-**Related:** [Business Requirements Document](./BUSINESS_REQUIREMENTS.md) · [Product Design Specification](./PRODUCT_DESIGN_SPECIFICATION.md)
+**Related:** [Business Requirements Document](./BUSINESS_REQUIREMENTS.md) · [Product Design Specification](./PRODUCT_DESIGN_SPECIFICATION.md) · [Technical Design](./TECHNICAL_DESIGN.md)
 
 ---
 
@@ -194,13 +222,13 @@ A persistent sticky header provides anchor links to each section. On mobile the 
 
 *Generation:*
 - [ ] A "Generate Tailored Resume" button is enabled only when at least one skill is selected.
-- [ ] PDF generation runs entirely in the browser (`pdf-lib` or equivalent); no data leaves the device.
+- [ ] PDF generation runs entirely in the browser (`@react-pdf/renderer`); no data leaves the device.
 - [ ] A loading indicator is shown during generation (target: ≤ 10 s per [BRD §4](./BUSINESS_REQUIREMENTS.md#4-goals-and-success-criteria)).
 - [ ] The generated PDF includes only the experience bullets and skills relevant to the selection.
 - [ ] The PDF filename follows the pattern `[Name]_Resume_Tailored.pdf`.
 - [ ] Works on mobile and desktop.
 
-**Deferred decisions:** PDF template design and field inclusion rules are defined in the next phase (BRD D-2).
+**Template:** Header (photo + contacts), Summary (profile paragraph, hard skills, domain expertise, soft skills), Experience. Field inclusion rules per filter: see [TDD §10.7](./TECHNICAL_DESIGN.md#107-template-specification-resolves-brd-d-2). (Resolves BRD D-2.)
 
 ---
 
@@ -222,7 +250,8 @@ A persistent sticky header provides anchor links to each section. On mobile the 
 - [ ] Text area labelled "Job description" (required); minimum 50 characters before submission is enabled.
 - [ ] Input field labelled "Company name" (optional, max 100 chars).
 - [ ] Character counter displayed below the job description field.
-- [ ] A captcha challenge (provider TBD — BRD D-3) is rendered below the inputs; the "Generate" button is disabled until the captcha is solved.
+- [ ] Abuse prevention runs silently before generation: honeypot field check, session rate limit (3 generations per session), and browser-automation signal check. No visible captcha widget is shown to legitimate users (see [TDD §9.9](./TECHNICAL_DESIGN.md#99-abuse-prevention-resolves-brd-d-3)).
+- [ ] When the session rate limit is reached, the "Generate" button is disabled with the message "You've reached the generation limit for this session."
 - [ ] "Generate" button is disabled while generation is in progress.
 
 #### 5.9.3 Generation & output
@@ -354,8 +383,8 @@ Visitor opens Cover Letter section
   → clicks "Generate" after captcha
   → system detects no browser LLM support
   → inline message: "Cover letter generation requires a browser with
-     built-in AI support (e.g., Chrome 127+). Please try in a
-     compatible browser."
+     WebGPU support (Chrome 113+, Edge 113+, Safari 17.4+, Firefox 141+).
+     Please try in a compatible browser."
   → form inputs remain intact
 ```
 
@@ -367,6 +396,6 @@ Carried from [BRD §11](./BUSINESS_REQUIREMENTS.md#11-open-questions). To be res
 
 | ID | Decision | Needed before |
 |---|---|---|
-| D-1 | Exact browser LLM API and minimum browser version requirements | M5 — Cover Letter Generator |
+| ~~D-1~~ | ~~Browser LLM API and minimum version~~ | **Resolved** — see [TDD §9](./TECHNICAL_DESIGN.md#9-browser-llm-integration) |
 | D-2 | PDF template design and field inclusion/exclusion rules per filter | M4 — Resume Download |
-| D-3 | Captcha provider (hCaptcha vs. Cloudflare Turnstile vs. custom puzzle) | M5 — Cover Letter Generator |
+| ~~D-3~~ | ~~Captcha provider~~ | **Resolved** — see [TDD §9.9](./TECHNICAL_DESIGN.md#99-abuse-prevention-resolves-brd-d-3) |
