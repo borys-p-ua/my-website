@@ -41,7 +41,7 @@ Implement the full token set from [PDS §12](./PRODUCT_DESIGN_SPECIFICATION.md#1
 
 ---
 
-### T-1.3 Self-hosted fonts
+### ✅ T-1.3 Self-hosted fonts
 
 - Download Inter (400, 600, 700) and JetBrains Mono (400, 700) `.woff2` Latin-subset files → `public/fonts/`
 - `@font-face` + `font-display: swap` declarations in `src/index.css`
