@@ -168,7 +168,7 @@ Implement the reusable primitives consumed by the sections above (extract from s
 
 Static SEO markup, real images, and Lighthouse score validation.
 
-### T-3.1 Static SEO markup
+### ✅ T-3.1 Static SEO markup
 
 All in `index.html` — nothing rendered by React:
 
@@ -183,7 +183,7 @@ All in `index.html` — nothing rendered by React:
 
 ---
 
-### T-3.2 Profile photo + OG image
+### ✅ T-3.2 Profile photo + OG image
 
 - Add `public/images/profile.webp`, `profile.avif`, `og-image.png`
 - Update Hero and About sections: replace placeholders with `<picture>` using AVIF + WebP sources, `srcset`, `sizes`, `width`/`height`; `fetchpriority="high"` on Hero photo
@@ -192,7 +192,7 @@ All in `index.html` — nothing rendered by React:
 
 ---
 
-### T-3.3 Lighthouse audit + fixes
+### ✅ T-3.3 Lighthouse audit + fixes
 
 - Run Lighthouse on the deployed site
 - Address any metric below threshold

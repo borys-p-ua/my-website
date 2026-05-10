@@ -42,5 +42,5 @@ No SSR · no auth · no CMS · no contact form · no project case studies · no 
 
 ## Current milestone
 
-**M3 — SEO & Performance** (static SEO markup, real images, Lighthouse audit).
-M1 and M2 are complete.
+**M4 — Resume Download** (static PDF download, Resume section UI, PDF template, filtered PDF).
+M1, M2, and M3 are complete.
