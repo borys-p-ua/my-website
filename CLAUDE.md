@@ -1,5 +1,9 @@
 # CLAUDE.md — Personal Portfolio Website
 
+## Skill files
+
+For focused implementation work, load only the relevant file from [`SKILLS.md`](SKILLS.md) rather than the full docs.
+
 ## Documentation map
 
 All requirements, design decisions, and implementation constraints live in `docs/`.
