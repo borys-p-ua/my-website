@@ -83,7 +83,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### ✅T-2.2 Header + navigation
+### ✅ T-2.2 Header + navigation
 
 - `src/components/layout/Header.tsx` — logo, nav links, theme toggle button, "Résumé" CTA
 - `src/hooks/useScrollSpy.ts` — `IntersectionObserver` tracking active section
@@ -94,7 +94,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### ✅T-2.3 Hero section
+### ✅ T-2.3 Hero section
 
 - `src/sections/Hero/index.tsx` — eyebrow, name `<h1>`, headline, summary paragraph, two CTA buttons, three meta facts, profile photo `<picture>` placeholder
 - Eager import in `App.tsx`
@@ -103,7 +103,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### T-2.4 About section
+### ✅ T-2.4 About section
 
 - `src/sections/About/index.tsx` — bio paragraphs, six fact items with Lucide icons, photo placeholder
 - Eager import in `App.tsx`
@@ -112,7 +112,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### T-2.5 Skills section
+### ✅ T-2.5 Skills section
 
 - `src/sections/Skills/index.tsx` — category grid, tag toggle (reads/writes `SkillFilterContext`), selected counter, "Clear all" / "Select all" toolbar
 - `React.lazy` import in `App.tsx`
@@ -121,7 +121,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### T-2.6 Experience section
+### ✅ T-2.6 Experience section
 
 - `src/sections/Experience/index.tsx` — vertical timeline, 8 role entries each with role title, company + domain, date range, stack tag row, bullet list, optional key-achievement block
 - `React.lazy` import in `App.tsx`
@@ -130,7 +130,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### T-2.7 Projects section
+### ✅ T-2.7 Projects section
 
 - `src/sections/Projects/index.tsx` — 6 project cards with number badge, title, company (mono), description, tag row, status badge
 - Status badge style differs for "In progress" vs "Shipped"
@@ -140,7 +140,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### T-2.8 Contact section + Footer
+### ✅ T-2.8 Contact section + Footer
 
 - `src/sections/Contact/index.tsx` — three contact cards: email (`mailto:`), LinkedIn, GitHub (both `target="_blank" rel="noreferrer"`)
 - `src/components/layout/Footer.tsx` — copyright line + repo link + back-to-top
@@ -150,7 +150,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### T-2.9 UI primitives + shared components
+### ✅ T-2.9 UI primitives + shared components
 
 Implement the reusable primitives consumed by the sections above (extract from section code as needed):
 
