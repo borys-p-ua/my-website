@@ -397,5 +397,5 @@ Carried from [BRD §11](./BUSINESS_REQUIREMENTS.md#11-open-questions). To be res
 | ID | Decision | Needed before |
 |---|---|---|
 | ~~D-1~~ | ~~Browser LLM API and minimum version~~ | **Resolved** — see [TDD §9](./TECHNICAL_DESIGN.md#9-browser-llm-integration) |
-| D-2 | PDF template design and field inclusion/exclusion rules per filter | M4 — Resume Download |
+| ~~D-2~~ | ~~PDF template design and field inclusion/exclusion rules per filter~~ | **Resolved** — see [TDD §10.7](./TECHNICAL_DESIGN.md#107-template-specification-resolves-brd-d-2) |
 | ~~D-3~~ | ~~Captcha provider~~ | **Resolved** — see [TDD §9.9](./TECHNICAL_DESIGN.md#99-abuse-prevention-resolves-brd-d-3) |

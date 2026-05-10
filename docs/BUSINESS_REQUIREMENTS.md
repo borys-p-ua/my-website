@@ -21,7 +21,7 @@
 
 ---
 
-**Version:** 1.3  
+**Version:** 1.4  
 **Date:** 2026-05-10  
 **Author:** Borys  
 **Status:** Approved  
@@ -148,6 +148,14 @@ Contrast-compliant palette is defined in [PDS §3](./PRODUCT_DESIGN_SPECIFICATIO
 | NF-43 | Tests must pass before any deployment (enforced by the existing CI pipeline). |
 | NF-44 | No dead code, no commented-out code, no `TODO` comments in merged code. |
 | NF-45 | Components are small, single-responsibility, and easy to read in isolation. |
+| NF-46 | Code formatting enforced by Prettier with a project-wide config; `prettier --check` runs on CI and fails the pipeline on any diff. |
+| NF-47 | Pre-commit quality gate via Husky + lint-staged: Prettier formats staged files and ESLint auto-fixes violations before every commit; TypeScript type-check runs on the full project. |
+| NF-48 | Commit messages follow the [Conventional Commits](https://www.conventionalcommits.org/) specification (`type(scope): subject` — e.g., `feat(resume): add filtered PDF download`); enforced by `commitlint` in the Husky `commit-msg` hook. |
+| NF-49 | No floating promises — every `async` call is explicitly awaited or has an error handler; enforced by ESLint rule `@typescript-eslint/no-floating-promises`. |
+| NF-50 | No `console.*` calls in committed code; enforced by ESLint `no-console`. |
+| NF-51 | Cyclomatic complexity ≤ 10 per function; enforced by ESLint `complexity` rule. |
+| NF-52 | No circular module dependencies; enforced by `eslint-plugin-import` `no-cycle`. |
+| NF-53 | Type-only imports use `import type`; enforced by `@typescript-eslint/consistent-type-imports`. |
 
 ---
 
