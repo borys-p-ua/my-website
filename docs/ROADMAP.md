@@ -71,7 +71,7 @@ Populate all structured data from the `export/` reference (CV content is in `sec
 
 All eight sections rendered responsively with real content. No PDF generation or LLM yet.
 
-### T-2.1 App shell + layout primitives
+### ✅ T-2.1 App shell + layout primitives
 
 - `src/context/ThemeContext.tsx` — `useState` + `localStorage` persistence, writes `data-theme` on `<html>`
 - `src/context/SkillFilterContext.tsx` — `Set<string>` state with `toggle`, `selectAll`, `clearAll`, `reset`
@@ -83,7 +83,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### T-2.2 Header + navigation
+### ✅T-2.2 Header + navigation
 
 - `src/components/layout/Header.tsx` — logo, nav links, theme toggle button, "Résumé" CTA
 - `src/hooks/useScrollSpy.ts` — `IntersectionObserver` tracking active section
@@ -94,7 +94,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ---
 
-### T-2.3 Hero section
+### ✅T-2.3 Hero section
 
 - `src/sections/Hero/index.tsx` — eyebrow, name `<h1>`, headline, summary paragraph, two CTA buttons, three meta facts, profile photo `<picture>` placeholder
 - Eager import in `App.tsx`
