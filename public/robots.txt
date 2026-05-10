@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://borys-p-ua.github.io/my-website/sitemap.xml
