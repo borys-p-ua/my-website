@@ -15,7 +15,11 @@ function renderExperience() {
 describe('Experience', () => {
   it('should render the section heading', () => {
     renderExperience()
-    expect(screen.getByRole('heading', { name: 'Experience' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: 'A timeline of roles, teams led, and platforms shipped.',
+      })
+    ).toBeInTheDocument()
   })
 
   it('should render all 8 role entries', () => {
@@ -28,7 +32,7 @@ describe('Experience', () => {
 
   it('should render the current role date as Present', () => {
     renderExperience()
-    expect(screen.getByText(/Nov 2023 – Present/)).toBeInTheDocument()
+    expect(screen.getByText(/Nov 2023 → Present/)).toBeInTheDocument()
   })
 
   it('should render stack tags for entries that have them', () => {
@@ -41,9 +45,10 @@ describe('Experience', () => {
     expect(screen.getByText(/Shipped three large streams/)).toBeInTheDocument()
   })
 
-  it('should not render achievement block for entries without one', () => {
+  it('should render Key achievement label', () => {
     renderExperience()
-    expect(screen.queryByText(/NDA company achievement/)).not.toBeInTheDocument()
+    const labels = screen.getAllByText('Key achievement')
+    expect(labels.length).toBeGreaterThan(0)
   })
 
   it('should have no axe violations', async () => {

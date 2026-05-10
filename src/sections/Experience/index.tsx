@@ -1,4 +1,6 @@
+import { Star } from 'lucide-react'
 import { Section } from '../../components/layout/Section'
+import { SectionHeader } from '../../components/layout/SectionHeader'
 import { experience } from '../../data/experience'
 
 function formatDate(iso: string): string {
@@ -14,71 +16,90 @@ function formatDate(iso: string): string {
 
 export function Experience() {
   return (
-    <Section
-      id="experience"
-      className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
-    >
-      <h2
-        id="experience-heading"
-        className="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
-      >
-        Experience
-      </h2>
+    <Section id="experience" className="bg-surface px-4 py-24 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeader
+          eyebrow="04 — Experience"
+          headingId="experience-heading"
+          title="A timeline of roles, teams led, and platforms shipped."
+          lede="From technical engineer in 2008 to Principal Engineer today — eight roles, six companies, three industries."
+        />
 
-      <div className="relative ml-2 mt-10 border-l-2 border-border pl-7 sm:pl-9">
-        {experience.map((entry) => (
-          <div key={`${entry.company}-${entry.startDate}`} className="relative mb-10 last:mb-0">
-            <div
-              aria-hidden="true"
-              className="absolute -left-[13px] top-[18px] h-2.5 w-2.5 rounded-full bg-accent"
-            />
-            <div className="rounded-xl bg-surface p-5 sm:p-6">
-              <div className="flex flex-wrap items-start justify-between gap-2">
-                <div>
-                  <p className="font-semibold text-text-primary">{entry.role}</p>
-                  <p className="text-sm text-text-secondary">
-                    {entry.company}
-                    {entry.domain && <span className="ml-1 text-text-muted">{entry.domain}</span>}
-                  </p>
+        <div className="relative pl-8">
+          <div aria-hidden="true" className="absolute left-[5px] top-3 bottom-0 w-0.5 bg-border" />
+          {experience.map((entry) => (
+            <article
+              key={`${entry.company}-${entry.startDate}`}
+              className="relative mb-8 last:mb-0"
+            >
+              <div
+                aria-hidden="true"
+                className="absolute -left-8 top-8 h-3 w-3 rounded-full bg-accent"
+                style={{
+                  boxShadow: '0 0 0 3px var(--color-surface), 0 0 0 4px var(--color-accent)',
+                }}
+              />
+              <div className="rounded-xl border border-border-subtle bg-bg p-6 sm:p-7">
+                <div className="flex flex-wrap items-start justify-between gap-4">
+                  <div>
+                    <h3 className="text-lg font-semibold tracking-[-0.01em] text-text-primary">
+                      {entry.role}
+                    </h3>
+                    <p className="mt-1 text-sm">
+                      <span className="text-accent">{entry.company}</span>
+                      {entry.domain && <span className="ml-2 text-text-muted">{entry.domain}</span>}
+                    </p>
+                  </div>
+                  <div className="text-right font-mono text-xs text-text-muted whitespace-nowrap">
+                    {formatDate(entry.startDate)} →{' '}
+                    {entry.endDate ? formatDate(entry.endDate) : 'Present'}
+                  </div>
                 </div>
-                <p className="whitespace-nowrap font-mono text-sm text-text-muted">
-                  {formatDate(entry.startDate)}
-                  {' – '}
-                  {entry.endDate ? formatDate(entry.endDate) : 'Present'}
-                </p>
+
+                {entry.stack.length > 0 && (
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {entry.stack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="rounded-md border border-border bg-surface-raised px-2 py-0.5 font-mono text-xs text-text-secondary"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {entry.bullets.length > 0 && (
+                  <ul className="mt-4 space-y-1.5">
+                    {entry.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="flex gap-3 text-sm leading-relaxed text-text-secondary"
+                      >
+                        <span className="shrink-0 text-text-muted" aria-hidden="true">
+                          —
+                        </span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {entry.achievement && (
+                  <div className="mt-4 flex gap-2.5 rounded-lg bg-accent-subtle p-4 text-[13px] text-accent">
+                    <Star size={14} aria-hidden="true" className="mt-0.5 shrink-0" />
+                    <div>
+                      <strong className="mb-0.5 block text-xs font-medium uppercase tracking-widest text-text-primary">
+                        Key achievement
+                      </strong>
+                      {entry.achievement}
+                    </div>
+                  </div>
+                )}
               </div>
-
-              {entry.stack.length > 0 && (
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {entry.stack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md bg-surface-raised px-2 py-0.5 font-mono text-xs text-text-secondary"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {entry.bullets.length > 0 && (
-                <ul className="mt-4 list-outside list-disc space-y-1 pl-4">
-                  {entry.bullets.map((bullet) => (
-                    <li key={bullet} className="text-sm leading-relaxed text-text-secondary">
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              )}
-
-              {entry.achievement && (
-                <div className="mt-4 rounded-lg border border-accent bg-accent-subtle px-4 py-3">
-                  <p className="text-sm font-medium text-text-primary">{entry.achievement}</p>
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </Section>
   )

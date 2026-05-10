@@ -1,6 +1,7 @@
 import { GitBranch, Globe, Mail } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Section } from '../../components/layout/Section'
+import { SectionHeader } from '../../components/layout/SectionHeader'
 import { contact } from '../../data/contact'
 
 interface ContactItem {
@@ -41,41 +42,37 @@ const ITEMS: ContactItem[] = [
 
 export function Contact() {
   return (
-    <Section
-      id="contact"
-      className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
-    >
-      <h2
-        id="contact-heading"
-        className="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl"
-      >
-        Get in touch
-      </h2>
-      <p className="mt-4 max-w-xl text-base text-text-secondary">
-        Open to interesting engineering and leadership roles. Feel free to reach out.
-      </p>
+    <Section id="contact" className="bg-surface px-4 py-24 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeader
+          eyebrow="08 — Contact"
+          headingId="contact-heading"
+          title="Let's talk."
+          lede="Open to Principal / Staff backend and engineering management roles in the UK and remote-EU."
+        />
 
-      <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:flex-wrap sm:gap-10">
-        {ITEMS.map(({ icon: Icon, label, displayValue, href, external }) => (
-          <a
-            key={label}
-            href={href}
-            {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
-            className="group flex items-start gap-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-          >
-            <Icon size={24} aria-hidden="true" className="mt-0.5 shrink-0 text-accent" />
-            <div>
-              <p className="text-xs font-medium uppercase tracking-wide text-text-muted">{label}</p>
-              <p className="text-sm font-medium text-text-primary transition-colors duration-base group-hover:text-accent">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {ITEMS.map(({ icon: Icon, label, displayValue, href, external }) => (
+            <a
+              key={label}
+              href={href}
+              {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
+              className="flex flex-col gap-2 rounded-xl border border-border-subtle bg-bg p-6 transition-colors duration-base hover:border-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              <div className="mb-2 grid h-10 w-10 place-items-center rounded-lg bg-accent-subtle text-accent">
+                <Icon size={20} aria-hidden="true" />
+              </div>
+              <span className="font-mono text-[11px] uppercase tracking-widest text-text-muted">
+                {label}
+              </span>
+              <span className="break-words text-base font-medium text-text-primary">
                 {displayValue}
                 {external && <span className="sr-only"> (opens in new tab)</span>}
-              </p>
-            </div>
-          </a>
-        ))}
+              </span>
+            </a>
+          ))}
+        </div>
       </div>
-
-      <hr className="mt-16 border-border-subtle" />
     </Section>
   )
 }

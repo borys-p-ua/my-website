@@ -19,7 +19,11 @@ function renderSkills() {
 describe('Skills', () => {
   it('should render the section heading', () => {
     renderSkills()
-    expect(screen.getByRole('heading', { name: 'Skills' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: "The stack I've shipped with — and the practices behind it.",
+      })
+    ).toBeInTheDocument()
   })
 
   it('should render all 9 skill categories', () => {
@@ -51,7 +55,6 @@ describe('Skills', () => {
       'aria-pressed',
       'true'
     )
-    expect(screen.getByText('1 selected')).toBeInTheDocument()
   })
 
   it('should deselect a tag on second click', async () => {

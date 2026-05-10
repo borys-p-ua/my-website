@@ -44,10 +44,6 @@ export function Header() {
     hamburgerRef.current?.focus()
   }, [])
 
-  const nameParts = profile.name.split(' ')
-  const firstName = nameParts[0] ?? ''
-  const surname = nameParts.slice(1).join(' ')
-
   const headerClasses = [
     'fixed inset-x-0 top-0 z-50 h-16 transition-all duration-base',
     scrolled
@@ -64,10 +60,12 @@ export function Header() {
         <a
           href="#"
           aria-label={`${profile.name} — back to top`}
-          className="text-lg font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          className="flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
-          <span className="text-accent">{firstName}</span>
-          {surname && <span className="text-text-primary"> {surname}</span>}
+          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-accent font-bold text-sm text-bg">
+            B
+          </span>
+          <span className="font-mono text-sm text-text-primary">borys-p.dev</span>
         </a>
 
         <div className="hidden items-center gap-6 md:flex">

@@ -15,7 +15,7 @@ function renderContact() {
 describe('Contact', () => {
   it('should render the section heading', () => {
     renderContact()
-    expect(screen.getByRole('heading', { name: 'Get in touch' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: "Let's talk." })).toBeInTheDocument()
   })
 
   it('should render the email link with mailto href', () => {

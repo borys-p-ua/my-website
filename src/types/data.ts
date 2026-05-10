@@ -15,6 +15,7 @@ export interface Profile {
   heroMeta: readonly [HeroMetaFact, HeroMetaFact, HeroMetaFact]
   education: string
   currentlyLearning: string
+  aboutBio: string[]
 }
 
 export interface SkillCategory {

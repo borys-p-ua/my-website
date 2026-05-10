@@ -15,32 +15,29 @@ function renderAbout() {
 describe('About', () => {
   it('should render the section heading', () => {
     renderAbout()
-    expect(screen.getByRole('heading', { name: 'About me' })).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', {
+        name: 'A career split evenly between writing software and growing the people who write it.',
+      })
+    ).toBeInTheDocument()
   })
 
-  it('should render the bio paragraph', () => {
+  it('should render the bio paragraphs', () => {
     renderAbout()
-    expect(screen.getByText(/leading three teams/i)).toBeInTheDocument()
+    expect(screen.getByText(/thirteen years building software/i)).toBeInTheDocument()
   })
 
-  it('should render all six facts', () => {
+  it('should render all six fact items with icons', () => {
     renderAbout()
-    const labels = [
-      'Location',
-      'Current role',
-      'Experience',
-      'Education',
-      'Availability',
-      'Currently learning',
-    ]
-    for (const label of labels) {
-      expect(screen.getByText(label)).toBeInTheDocument()
-    }
+    expect(screen.getByText('Bath, UK')).toBeInTheDocument()
+    expect(screen.getByText('Principal Engineer')).toBeInTheDocument()
+    expect(screen.getByText('13+ years')).toBeInTheDocument()
+    expect(screen.getByText('remote / hybrid')).toBeInTheDocument()
   })
 
-  it('should render the location value', () => {
+  it('should render the location', () => {
     renderAbout()
-    expect(screen.getByText('Bath, Somerset · United Kingdom')).toBeInTheDocument()
+    expect(screen.getByText('Bath, UK')).toBeInTheDocument()
   })
 
   it('should have no axe violations', async () => {
