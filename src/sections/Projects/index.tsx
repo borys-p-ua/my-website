@@ -47,20 +47,30 @@ export function Projects() {
                 ))}
               </div>
 
-              <div className="mt-auto flex gap-2 border-t border-border-subtle pt-4">
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[13px] text-text-secondary transition-colors duration-base hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                >
-                  Case study
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[13px] text-text-secondary transition-colors duration-base hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-                >
-                  Code
-                </a>
-              </div>
+              {(project.liveUrl ?? project.githubUrl) && (
+                <div className="mt-auto flex gap-2 border-t border-border-subtle pt-4">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[13px] text-text-secondary transition-colors duration-base hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    >
+                      Case study
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-[13px] text-text-secondary transition-colors duration-base hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                    >
+                      Code
+                    </a>
+                  )}
+                </div>
+              )}
             </article>
           ))}
         </div>
