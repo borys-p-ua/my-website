@@ -206,7 +206,7 @@ All in `index.html` — nothing rendered by React:
 
 Full-resume static download and client-side filtered PDF generation.
 
-### T-4.1 Full-resume static download
+### ✅ T-4.1 Full-resume static download
 
 - Place `public/Polietaiev_Borys_Resume.pdf` (pre-generated)
 - Wire "Download résumé" button in Header and Hero to `<a href={assetUrl('Polietaiev_Borys_Resume.pdf')} download>`
@@ -215,7 +215,7 @@ Full-resume static download and client-side filtered PDF generation.
 
 ---
 
-### T-4.2 Resume section UI
+### ✅ T-4.2 Resume section UI
 
 - `src/sections/Resume/index.tsx` — skill filter panel (reads `SkillFilterContext`, synced with Skills section), JD textarea with char counter (4000-char limit), summary sidebar (skills selected / experience count / JD word count), preset-template buttons (Engineering Manager, Backend Lead, Principal Eng.)
 - `React.lazy` import in `App.tsx`
@@ -224,7 +224,7 @@ Full-resume static download and client-side filtered PDF generation.
 
 ---
 
-### T-4.3 PDF template components
+### ✅ T-4.3 PDF template components
 
 Install `@react-pdf/renderer` v4. Build `src/lib/pdf/`:
 
@@ -239,7 +239,7 @@ Install `@react-pdf/renderer` v4. Build `src/lib/pdf/`:
 
 ---
 
-### T-4.4 Filtered PDF download
+### ✅ T-4.4 Filtered PDF download
 
 - `src/lib/pdf/index.ts` — `useResumePdf(filter?)` hook with dynamic `import('@react-pdf/renderer')` inside the callback
 - Wire "Download tailored PDF" button in Resume section to hook

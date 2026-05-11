@@ -42,5 +42,5 @@ No SSR · no auth · no CMS · no contact form · no project case studies · no 
 
 ## Current milestone
 
-**M4 — Resume Download** (static PDF download, Resume section UI, PDF template, filtered PDF).
-M1, M2, and M3 are complete.
+**M5 — Cover Letter Generator** (CoverLetter section UI, abuse prevention gate, browser LLM integration).
+M1, M2, M3, and M4 are complete.
