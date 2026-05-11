@@ -56,7 +56,7 @@ export const PRESETS: Preset[] = [
     ],
   },
   {
-    label: 'Principal Eng.',
+    label: 'Principal Engineer',
     skills: [
       'TypeScript',
       'Node.js',

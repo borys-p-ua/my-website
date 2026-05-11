@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react'
 import { axe } from 'vitest-axe'
 import { describe, expect, it } from 'vitest'
 import { profile } from '../../data/profile'
-import { assetUrl } from '../../lib/assetUrl'
 import { Hero } from './index'
 
 describe('Hero', () => {
@@ -11,11 +10,9 @@ describe('Hero', () => {
     expect(screen.getByRole('heading', { level: 1, name: profile.name })).toBeInTheDocument()
   })
 
-  it('links download résumé to the static PDF path', () => {
+  it('links download resume to the static PDF path', () => {
     render(<Hero />)
-    const download = screen.getByRole('link', { name: /download résumé/i })
-    expect(download).toHaveAttribute('href', assetUrl(profile.resumePdfPath))
-    expect(download).toHaveAttribute('download')
+    expect(screen.getByRole('button', { name: /download resume/i })).toBeInTheDocument()
   })
 
   it('links see my work to the projects section', () => {

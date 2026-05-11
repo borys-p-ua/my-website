@@ -24,20 +24,22 @@ class IntersectionObserverMock implements IntersectionObserver {
 
 globalThis.IntersectionObserver = IntersectionObserverMock
 
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  configurable: true,
-  value: (query: string): MediaQueryList => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: () => {},
-    removeListener: () => {},
-    addEventListener: () => {},
-    removeEventListener: () => {},
-    dispatchEvent: () => false,
-  }),
-})
+if (typeof window !== 'undefined') {
+  Object.defineProperty(window, 'matchMedia', {
+    writable: true,
+    configurable: true,
+    value: (query: string): MediaQueryList => ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addListener: () => {},
+      removeListener: () => {},
+      addEventListener: () => {},
+      removeEventListener: () => {},
+      dispatchEvent: () => false,
+    }),
+  })
+}
 
 // Node.js 22 exposes an experimental undefined `localStorage` global that
 // overrides jsdom's. Replace it with a real in-memory implementation.
@@ -70,5 +72,7 @@ afterEach(() => {
   localStorageMock.clear()
 })
 
-// axe-core attempts canvas color-contrast checks that jsdom doesn't support
-HTMLCanvasElement.prototype.getContext = () => null
+if (typeof HTMLCanvasElement !== 'undefined') {
+  // axe-core attempts canvas color-contrast checks that jsdom doesn't support
+  HTMLCanvasElement.prototype.getContext = () => null
+}

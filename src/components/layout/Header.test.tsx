@@ -42,9 +42,9 @@ describe('Header', () => {
     }
   })
 
-  it('should render the Résumé CTA link', () => {
+  it('should render the Resume CTA button', () => {
     renderHeader()
-    expect(screen.getByRole('link', { name: 'Résumé' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Resume' })).toBeInTheDocument()
   })
 
   it('should render the hamburger button with correct initial aria attributes', () => {

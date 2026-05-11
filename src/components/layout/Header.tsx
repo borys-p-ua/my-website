@@ -5,7 +5,7 @@ import { MobileDrawer } from './MobileDrawer'
 import type { NavItem } from './MobileDrawer'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
 import { profile } from '../../data/profile'
-import { assetUrl } from '../../lib/assetUrl'
+import { useResumePdf } from '../../lib/pdf'
 
 const NAV_ITEMS: readonly NavItem[] = [
   { label: 'About', id: 'about' },
@@ -22,6 +22,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [drawerOpen, setDrawerOpen] = useState(false)
   const hamburgerRef = useRef<HTMLButtonElement>(null)
+  const { download: downloadResume, isGenerating } = useResumePdf(undefined)
 
   const sectionIds = useMemo(() => SECTION_IDS, [])
   const activeId = useScrollSpy(sectionIds)
@@ -90,13 +91,16 @@ export function Header() {
             ))}
           </ul>
           <ThemeToggle />
-          <a
-            href={assetUrl(profile.resumePdfPath)}
-            download
-            className="rounded-md bg-accent px-4 py-2 text-sm font-semibold text-bg transition-colors duration-base hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+          <button
+            type="button"
+            onClick={() => {
+              void downloadResume()
+            }}
+            disabled={isGenerating}
+            className="rounded-md bg-accent px-4 py-2 text-sm font-semibold text-bg transition-colors duration-base hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50"
           >
-            Résumé
-          </a>
+            {isGenerating ? 'Generating…' : 'Resume'}
+          </button>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">

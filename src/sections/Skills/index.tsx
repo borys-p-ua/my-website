@@ -15,7 +15,7 @@ export function Skills() {
           eyebrow="03 — Skills"
           headingId="skills-heading"
           title="The stack I've shipped with — and the practices behind it."
-          lede="Tap any tag to flag it; the selected set drives the tailored résumé and cover-letter generation below."
+          lede="Tap any tag to flag it; the selected set drives the tailored resume and cover-letter generation below."
           aside={
             <div className="flex items-center gap-3">
               <button

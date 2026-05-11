@@ -1,9 +1,12 @@
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { Section } from '../../components/layout/Section'
 import { profile } from '../../data/profile'
 import { assetUrl } from '../../lib/assetUrl'
+import { useResumePdf } from '../../lib/pdf'
 
 export function Hero() {
+  const { download: downloadResume, isGenerating } = useResumePdf(undefined)
+
   return (
     <Section id="hero" className="relative overflow-hidden px-4 pb-24 pt-36 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -25,14 +28,16 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href={assetUrl(profile.resumePdfPath)}
-                download
-                className="inline-flex items-center gap-2 rounded-md bg-accent px-4 py-3 text-sm font-semibold text-bg transition-colors duration-base hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+              <button
+                type="button"
+                onClick={() => {
+                  void downloadResume()
+                }}
+                disabled={isGenerating}
+                className="rounded-md bg-accent px-5 py-2 text-sm font-semibold text-bg transition-colors duration-base hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg disabled:opacity-50"
               >
-                <Download size={14} aria-hidden="true" />
-                Download résumé
-              </a>
+                {isGenerating ? 'Generating…' : 'Download Resume'}
+              </button>
               <a
                 href="#projects"
                 className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-semibold text-text-primary transition-colors duration-base hover:border-accent hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"

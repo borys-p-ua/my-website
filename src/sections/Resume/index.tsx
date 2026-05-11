@@ -31,9 +31,9 @@ export function Resume() {
     <Section id="resume" className="bg-surface px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <SectionHeader
-          eyebrow="06 — Tailored résumé"
+          eyebrow="06 — Tailored resume"
           headingId="resume-heading"
-          title="Build a résumé tuned to the role."
+          title="Build a resume tuned to the role."
           lede="Pick the skills you want emphasised and paste the job description — the generator filters the PDF client-side."
         />
 

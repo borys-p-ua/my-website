@@ -12,7 +12,6 @@ vi.mock('@react-pdf/renderer', () => ({
   Text: ({ children }: { children: React.ReactNode }) => <span>{children}</span>,
   Image: ({ src }: { src: string }) => <img src={src} alt="" />,
   StyleSheet: { create: (s: Record<string, unknown>) => s },
-  Font: { register: vi.fn() },
 }))
 
 describe('ResumeDocument', () => {

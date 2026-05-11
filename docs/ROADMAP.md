@@ -85,7 +85,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 
 ### ✅ T-2.2 Header + navigation
 
-- `src/components/layout/Header.tsx` — logo, nav links, theme toggle button, "Résumé" CTA
+- `src/components/layout/Header.tsx` — logo, nav links, theme toggle button, "Resume" CTA
 - `src/hooks/useScrollSpy.ts` — `IntersectionObserver` tracking active section
 - Mobile hamburger + slide-in drawer: opens on click, closes on Escape, focus returns to hamburger
 - Active nav link style driven by scroll-spy
@@ -99,7 +99,7 @@ All eight sections rendered responsively with real content. No PDF generation or
 - `src/sections/Hero/index.tsx` — eyebrow, name `<h1>`, headline, summary paragraph, two CTA buttons, three meta facts, profile photo `<picture>` placeholder
 - Eager import in `App.tsx`
 
-**Delivers:** Hero renders with real content. "Download résumé" and "See my work" buttons have correct `href` targets. Layout holds at both 375 px and 1280 px.
+**Delivers:** Hero renders with real content. "Download resume" and "See my work" buttons have correct `href` targets. Layout holds at both 375 px and 1280 px.
 
 ---
 
@@ -209,7 +209,7 @@ Full-resume static download and client-side filtered PDF generation.
 ### ✅ T-4.1 Full-resume static download
 
 - Place `public/Polietaiev_Borys_Resume.pdf` (pre-generated)
-- Wire "Download résumé" button in Header and Hero to `<a href={assetUrl('Polietaiev_Borys_Resume.pdf')} download>`
+- Wire "Download resume" button in Header and Hero to `<a href={assetUrl('Polietaiev_Borys_Resume.pdf')} download>`
 
 **Delivers:** Clicking either download button saves the PDF immediately with the correct filename. Works on both desktop and mobile without a spinner.
 

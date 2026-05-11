@@ -1,5 +1,4 @@
 import { Document, Page } from '@react-pdf/renderer'
-import './fonts'
 import type { FilterOptions } from './types'
 import { styles } from './styles'
 import { ResumeHeader } from './sections/ResumeHeader'

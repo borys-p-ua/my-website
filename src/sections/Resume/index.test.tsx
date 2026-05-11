@@ -39,7 +39,7 @@ describe('Resume', () => {
   it('should render the section heading', () => {
     renderResume()
     expect(
-      screen.getByRole('heading', { name: 'Build a résumé tuned to the role.' })
+      screen.getByRole('heading', { name: 'Build a resume tuned to the role.' })
     ).toBeInTheDocument()
   })
 
@@ -64,7 +64,7 @@ describe('Resume', () => {
     renderResume()
     expect(screen.getByRole('button', { name: 'Engineering Manager' })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: 'Backend Lead' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: 'Principal Eng.' })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Principal Engineer' })).toBeInTheDocument()
   })
 
   it('should render download button', () => {
