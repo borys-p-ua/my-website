@@ -18,8 +18,11 @@ export interface Profile {
   aboutBio: string[]
 }
 
+export type SkillCategoryType = 'technical' | 'language' | 'domain' | 'soft'
+
 export interface SkillCategory {
   category: string
+  type: SkillCategoryType
   years: string
   items: string[]
 }

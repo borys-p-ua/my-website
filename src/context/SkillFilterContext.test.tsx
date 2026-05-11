@@ -7,7 +7,7 @@ import { SkillFilterProvider, useSkillFilter } from './SkillFilterContext'
 const totalSkillCount = skills.reduce((sum, cat) => sum + cat.items.length, 0)
 
 function SkillFilterProbe() {
-  const { selected, toggle, selectAll, clearAll, reset } = useSkillFilter()
+  const { selected, toggle, selectAll, clearAll, reset, setPreset } = useSkillFilter()
   const firstCategory = skills[0]?.category ?? ''
   const firstSkill = skills[0]?.items[0] ?? ''
 
@@ -31,6 +31,9 @@ function SkillFilterProbe() {
       </button>
       <button type="button" onClick={reset}>
         Reset
+      </button>
+      <button type="button" onClick={() => setPreset(['TypeScript', 'NestJS'])}>
+        Apply preset
       </button>
     </div>
   )
@@ -112,6 +115,18 @@ describe('SkillFilterContext', () => {
     expect(
       screen.getByText(`Count: ${totalSkillCount - category.items.length}`)
     ).toBeInTheDocument()
+  })
+
+  it('sets the selection to exactly the provided preset skills', async () => {
+    const user = userEvent.setup()
+    render(
+      <SkillFilterProvider>
+        <SkillFilterProbe />
+      </SkillFilterProvider>
+    )
+    await user.click(screen.getByRole('button', { name: 'Select all skills' }))
+    await user.click(screen.getByRole('button', { name: 'Apply preset' }))
+    expect(screen.getByText('Count: 2')).toBeInTheDocument()
   })
 
   it('clears the selection when reset is called', async () => {

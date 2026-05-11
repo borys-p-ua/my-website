@@ -8,6 +8,7 @@ interface SkillFilterState {
   selectAll: (category?: string) => void
   clearAll: (category?: string) => void
   reset: () => void
+  setPreset: (skills: string[]) => void
 }
 
 const SkillFilterContext = createContext<SkillFilterState | null>(null)
@@ -60,8 +61,14 @@ export function SkillFilterProvider({ children }: { children: ReactNode }) {
 
   const reset = useCallback(() => setSelected(new Set()), [])
 
+  const setPreset = useCallback((skills: string[]) => {
+    setSelected(new Set(skills))
+  }, [])
+
   return (
-    <SkillFilterContext.Provider value={{ selected, toggle, selectAll, clearAll, reset }}>
+    <SkillFilterContext.Provider
+      value={{ selected, toggle, selectAll, clearAll, reset, setPreset }}
+    >
       {children}
     </SkillFilterContext.Provider>
   )
