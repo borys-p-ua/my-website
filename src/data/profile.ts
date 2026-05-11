@@ -11,11 +11,11 @@ export const profile: Profile = {
   resumePdfPath: 'Polietaiev_Borys_Resume.pdf',
   heroEyebrow: 'Principal Engineer · Tech Lead · Engineering Manager',
   heroMeta: [
-    { label: 'Based in', value: 'Bath, Somerset · United Kingdom' },
+    { label: 'Based in', value: 'Bath, UK · GMT' },
     { label: 'Experience', value: '13+ years' },
     { label: 'Currently', value: 'Principal @ Expedition Software' },
   ],
-  education: 'Computer Science, Kharkiv Polytechnic Institute',
+  education: 'National Aviation University',
   currentlyLearning: 'Go, LLM fine-tuning & prompt engineering',
   aboutBio: [
     "I've spent thirteen years building software in earnest — most of it backend, much of it leading teams, and a good chunk of it deep in solution design before code was written.",

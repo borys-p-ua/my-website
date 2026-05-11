@@ -54,5 +54,6 @@ export const projects: Project[] = [
       'Single-page React 19 + Vite + Tailwind v4 site with on-device LLM cover-letter generation, client-side filtered PDF resume export, and a strict design-system codebase. Built in public.',
     tags: ['React 19', 'Vite', 'Tailwind v4', 'WebGPU', 'pdf-lib'],
     status: 'In progress · 2026',
+    githubUrl: 'https://github.com/borys-p-ua/my-website',
   },
 ]
