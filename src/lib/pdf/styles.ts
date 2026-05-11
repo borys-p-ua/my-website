@@ -12,9 +12,7 @@ export const styles = StyleSheet.create({
   },
 
   /* Header */
-  header: { flexDirection: 'row', marginBottom: 16 },
-  headerPhoto: { width: 72, height: 72, borderRadius: 36, marginRight: 16, objectFit: 'cover' },
-  headerDetails: { flex: 1, justifyContent: 'center' },
+  header: { marginBottom: 16 },
   headerName: { fontSize: 20, fontWeight: 700, color: '#0F172A', marginBottom: 3 },
   headerHeadline: { fontSize: 11, fontWeight: 400, color: '#334155', marginBottom: 4 },
   headerContact: { fontSize: 9, color: '#64748B' },
@@ -44,6 +42,6 @@ export const styles = StyleSheet.create({
   jobHeader: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 2 },
   jobCompany: { fontSize: 10, fontWeight: 600, color: '#0F172A' },
   jobDate: { fontSize: 9, color: '#64748B' },
-  jobRole: { fontSize: 9.5, fontStyle: 'italic', color: '#334155', marginBottom: 3, marginTop: 2 },
+  jobRole: { fontSize: 9.5, color: '#64748B', marginBottom: 3, marginTop: 2 },
   jobBullet: { fontSize: 9, color: '#1E293B', marginLeft: 12, marginBottom: 2 },
 })
