@@ -3,20 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
-    <link rel="preload" href="/my-website/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/my-website/fonts/inter-700.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Primary meta -->
+    <title>Borys Polietaiev — Principal Engineer · Tech Lead · Engineering Manager</title>
+    <meta
+      name="description"
+      content="Principal Engineer and Engineering Manager with 13+ years building backend systems and high-performing teams. Based in Bath, UK — open to remote and hybrid roles."
+    />
+    <link rel="canonical" href="https://borys-p-ua.github.io/my-website/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://borys-p-ua.github.io/my-website/" />
+    <meta
+      property="og:title"
+      content="Borys Polietaiev — Principal Engineer · Tech Lead · Engineering Manager"
+    />
+    <meta
+      property="og:description"
+      content="Principal Engineer and Engineering Manager with 13+ years building backend systems and high-performing teams. Based in Bath, UK — open to remote and hybrid roles."
+    />
+    <meta
+      property="og:image"
+      content="https://borys-p-ua.github.io/my-website/images/og-image.png"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Borys Polietaiev — Principal Engineer · Tech Lead · Engineering Manager"
+    />
+    <meta
+      name="twitter:description"
+      content="Principal Engineer and Engineering Manager with 13+ years building backend systems and high-performing teams. Based in Bath, UK — open to remote and hybrid roles."
+    />
+    <meta
+      name="twitter:image"
+      content="https://borys-p-ua.github.io/my-website/images/og-image.png"
+    />
+
+    <!-- JSON-LD Person schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Borys Polietaiev",
+        "url": "https://borys-p-ua.github.io/my-website/",
+        "jobTitle": "Principal Engineer · Tech Lead · Engineering Manager",
+        "worksFor": { "@type": "Organization", "name": "Expedition Software" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bath",
+          "addressRegion": "Somerset",
+          "addressCountry": "GB"
+        },
+        "email": "compparty1@gmail.com",
+        "sameAs": [
+          "https://linkedin.com/in/poletayev",
+          "https://github.com/borys-p-ua"
+        ]
+      }
+    </script>
+
+    <!-- Font preloads -->
+    <link
+      rel="preload"
+      href="/my-website/fonts/inter-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/my-website/fonts/inter-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <!-- Theme detection (runs before React to avoid flash) -->
     <script>
       ;(function () {
         var t = localStorage.getItem('theme')
-        document.documentElement.setAttribute(
-          'data-theme',
-          t === 'light' ? 'light' : 'dark'
-        )
+        document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark')
       })()
     </script>
-    <script type="module" crossorigin src="/my-website/assets/index-ByM9kXha.js"></script>
-    <link rel="stylesheet" crossorigin href="/my-website/assets/index-DMr8a3Yz.css">
+    <script type="module" crossorigin src="/my-website/assets/index-CV9mhesF.js"></script>
+    <link rel="modulepreload" crossorigin href="/my-website/assets/vendor-lucide-Cnn_P3v9.js">
+    <link rel="modulepreload" crossorigin href="/my-website/assets/vendor-react-j8ZL0eTr.js">
+    <link rel="stylesheet" crossorigin href="/my-website/assets/index-gV0eiTib.css">
   </head>
   <body>
     <div id="root"></div>
